@@ -1,0 +1,11 @@
+--- a/org-ql-view.el	2023-09-16 03:32:07.627479010 +0300
++++ b/org-ql-view.el	2023-09-16 03:31:12.403480217 +0300
+@@ -886,7 +896,7 @@ return an empty string."
+            (due-string (pcase (org-element-property :relative-due-date element)
+                          ('nil "")
+                          (string (format " %s " (org-add-props string nil 'face 'org-ql-view-due-date)))))
+-           (string (s-join " " (-non-nil (list todo-keyword priority-string title due-string tag-string)))))
++           (string (s-join " " (-non-nil (list (format "%-15s" category) todo-keyword priority-string title due-string tag-string)))))
+       (remove-list-of-text-properties 0 (length string) '(line-prefix) string)
+       ;; Add all the necessary properties and faces to the whole string
+       (--> string

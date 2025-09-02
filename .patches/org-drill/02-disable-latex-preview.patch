@@ -1,0 +1,15 @@
+--- org-drill-20210427.2003/org-drill.old.el	2023-09-10 19:45:00.317534166 +0300
++++ org-drill-20210427.2003/org-drill.el	2023-09-10 19:43:50.501535692 +0300
+@@ -2058,9 +2058,9 @@ RESCHEDULE-FN is the function to resched
+            (org-remove-latex-fragment-image-overlays)
+            (save-excursion
+              (org-mark-subtree)
+-             (let ((beg (region-beginning))
+-                   (end (region-end)))
+-               (org--latex-preview-region beg end))
++             ;; (let ((beg (region-beginning))
++             ;;       (end (region-end)))
++             ;;   (org--latex-preview-region beg end))
+              (deactivate-mark))
+            (org-drill-with-hidden-cloze-hints
+             (funcall reschedule-fn session))))))

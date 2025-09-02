@@ -1,0 +1,11 @@
+--- a/org-drill.el	2023-09-10 19:16:57.753570943 +0300
++++ b/org-drill.el	2023-09-10 19:16:21.101571745 +0300
+@@ -704,7 +704,7 @@ CMD is bound, or nil if it is not bound
+ (defun org-drill-time-to-inactive-org-timestamp (time)
+   "Convert TIME into org-mode timestamp."
+   (format-time-string
+-   (concat "[" (substring (cdr org-time-stamp-formats) 1 -1) "]")
++   (concat "[" (cdr org-time-stamp-formats) "]")
+    time))
+ 
+ (defun org-drill-map-entries (func &optional scope drill-match &rest skip)

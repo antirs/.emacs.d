@@ -1,0 +1,14 @@
+--- a/minizinc-mode.el	2023-08-22 14:57:22.577335891 +0300
++++ b/minizinc-mode.el	2023-08-22 14:57:40.257335505 +0300
+@@ -275,10 +275,7 @@ Regexp match data 0 points to the chars.
+    (error line-start (file-name) ":" line ":\n"
+           "MiniZinc:" (message) line-end))
+     :modes minizinc-mode)
+-  (add-to-list 'flycheck-checkers 'mzn2fzn)
+-  (add-hook 'minizinc-mode-hook
+-            (lambda ()
+-              (flycheck-mode))))
++  (add-to-list 'flycheck-checkers 'mzn2fzn))
+ 
+ (provide 'minizinc-mode)
+ 

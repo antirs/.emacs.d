@@ -1,0 +1,20 @@
+--- a/lsp-pls.el	2023-10-01 02:32:12.592078864 +0300
++++ b/lsp-pls.el	2023-10-01 02:31:59.112078817 +0300
+@@ -124,5 +124,6 @@ changes behavior depending on the conten
+                     (with-lsp-workspace workspace
+                       (lsp--set-configuration
+                        (lsp-configuration-section "pls"))))
++  :major-modes '(perl-mode cperl-mode)
+   :priority -1
+   :server-id 'pls))
+
+--- a/lsp-perlnavigator.el	2023-10-01 04:00:52.600097601 +0300
++++ b/lsp-perlnavigator.el	2023-10-01 04:00:37.276097547 +0300
+@@ -188,6 +188,7 @@ default to ~/.perlcriticrc. (no aliases,
+                                                               (lsp-package-path 'perlnavigator))
+                                                           "--stdio")))
+                   :activation-fn (lsp-activate-on "perl")
++                  :major-modes '(perl-mode cperl-mode)
+                   :priority 0
+                   :download-server-fn (lambda (_client callback error-callback _update?)
+                                         (lsp-package-ensure 'perlnavigator callback error-callback))
