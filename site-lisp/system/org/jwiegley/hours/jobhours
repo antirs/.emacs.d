@@ -1,0 +1,43 @@
+#!/bin/bash -e
+
+if [[ ! -f "$1" ]]; then
+    echo "Usage: jobhours <Org-mode file containing CLOCK data>"
+    exit 1
+fi
+
+if [[ ! -x "$(which jq)" ]]; then
+    echo "Error: jobhours requires the 'jq' utility to be installed"
+    exit 1
+fi
+
+if [[ ! -x "$(which org2tc)" ]]; then
+    echo "Error: jobhours requires the 'org2tc' utility to be installed"
+    exit 1
+fi
+
+function parseorg() {
+    ORG_START=$(convert_time "$1")
+    shift 1
+    org2tc -s "$ORG_START" "$@" | timelog-periods --file -
+}
+
+function convert_time() {
+    # Cut off the UTC timezone of +0000
+    stamp=$(echo "$*" | cut -c-19)
+    # Reinterpret it as shifted to our timezone (3 hours behind).
+    # NOTE: this is specific to my own use of this script!
+    date --date="$stamp +0300" +'%Y-%m-%d %H:%M:%S'
+}
+
+periods=$(mktemp -t work-periods.XXXXXXXX)
+function finish {
+  rm -f "$periods"
+}
+trap finish EXIT
+
+work-periods --there > "$periods"
+
+START=$(jq -r .start "$periods")
+FINISH=$(jq -r .finish "$periods")
+
+process-hours --ideal "$periods" --real <(parseorg "$START" "$@")
