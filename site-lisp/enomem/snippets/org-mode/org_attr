@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_attr
+# key: <oa
+# --
+#+ATTR_${0:group}: ${1:value}

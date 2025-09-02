@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_call
+# key: <oc
+# --
+#+call: ${0:name}[${1:in-header-args}](${2:args}) ${3:out-header-args}

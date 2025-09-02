@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_include_content
+# key: <oic
+# --
+#+include: "${0:file}" :only-contents t

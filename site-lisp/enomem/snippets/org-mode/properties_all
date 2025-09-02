@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: properties all
+# key: <pra
+# --
+:PROPERTIES:
+:header-args:  :results output verbatim drawer silent :wrap results
+:header-args+: :noweb no-export
+:header-args+: :comments noweb
+:header-args+: :exports code
+:header-args+: :eval never-export
+:END:

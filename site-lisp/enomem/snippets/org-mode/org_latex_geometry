@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_latex_geometry
+# key: <olg
+# --
+#+latex_header: \usepackage[top=2cm, bottom=2cm, outer=0cm, inner=0cm]{geometry}

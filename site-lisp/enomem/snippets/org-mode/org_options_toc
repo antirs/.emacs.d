@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_options_toc
+# key: <oot
+# --
+#+options: toc:nil

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: frontmatter_date
+# key: <fd
+# --
+#+date: <`(time-stamp-string "%Y-%m-%dT%T%z" (current-time))`>

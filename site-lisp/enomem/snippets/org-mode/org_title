@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: org_title
+# key: <ot
+# --
+#+title: ${0:title}
+#+author: enomem
+#+date: <`(time-stamp-string "%Y-%m-%d %a" (current-time))`>

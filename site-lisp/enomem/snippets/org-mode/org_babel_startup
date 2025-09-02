@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: org_babel_startup
+# key: <obs
+# --
+#+name: startup
+#+header: :results none
+#+header: :exports none
+#+begin_src emacs-lisp
+#+end_src
+
+
+# Local Variables:
+# eval: (progn (org-babel-goto-named-src-block "startup") (org-babel-execute-src-block) (outline-hide-sublevels 1))
+# End:

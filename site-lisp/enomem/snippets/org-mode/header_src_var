@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: header_src_var
+# key: <hsv
+# --
+#+header: :var ${0:name}=${1:value}

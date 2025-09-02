@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_latex_listings
+# key: <oll
+# --
+#+latex_header: \usepackage{listings}

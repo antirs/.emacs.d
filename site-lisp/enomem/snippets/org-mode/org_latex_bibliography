@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: org_latex_bibliography
+# key: <olb
+# --
+#+latex_header_extra: \usepackage[backend=biber,style=numeric,sorting=none,url=false]{biblatex}
+#+latex_header_extra: \addbibresource{~/.org/bibliography/biblio.bib}
+#+latex_header_extra: \addbibresource{~/.org/bibliography/literature/literature.bib}
+#+latex_header_extra: \addbibresource{~/.org/bibliography/web/web.bib}
+#+latex_header_extra: \printbibliography

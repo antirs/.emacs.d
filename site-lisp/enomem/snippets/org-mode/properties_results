@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: properties_results
+# key: <pr
+# --
+:header-args:${0:lang}: :results ${0:collection} ${1:type) ${2:format} ${3:handling}

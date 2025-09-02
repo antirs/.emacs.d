@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_babel_ingest
+# key: <obi
+# --
+# eval: (org-babel-lob-ingest "${0:file}")

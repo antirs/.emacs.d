@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_latex_fonts
+# key: <olf
+# --
+#+latex_header: \usepackage[T1,T2A]{fontenc}

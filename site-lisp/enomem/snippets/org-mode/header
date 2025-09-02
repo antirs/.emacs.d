@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: header
+# key: <he
+# --
+#+category: ░ ${0:category} ░
+#+filetags: ${1:tag}
+#+columns: %8TODO %40ITEM %1PRIORITY %5Effort %5Effort(Effort Children){:} %10CLOCKSUM
+#+options: ^:nil

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: properties_wrap
+# key: <pw
+# --
+:header-args:${0:lang}: :wrap "${1:value}"

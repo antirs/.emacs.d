@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: header_src_eval
+# key: <hsev
+# --
+#+header: :eval ${0:value}

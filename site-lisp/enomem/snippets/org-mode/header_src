@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: header_src
+# key: <hs
+# --
+#+header:

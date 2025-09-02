@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_options_export
+# key: <ooe
+# --
+#+options: h:1 prop:t d:t

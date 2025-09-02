@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: header_src_results
+# key: <hsr
+# --
+#+header: :results ${0:collection} ${1:type} ${2:format} ${3:handling}

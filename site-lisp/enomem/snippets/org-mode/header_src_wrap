@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: header_src_wrap
+# key: <hsw
+# --
+#+header: :wrap ${0:begin_}

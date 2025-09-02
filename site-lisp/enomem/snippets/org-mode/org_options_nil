@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_options_nil
+# key: <oon
+# --
+#+options: ^:nil toc:nil num:nil author:nil timestamp:nil

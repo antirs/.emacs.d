@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_latex_enum
+# key: <ole
+# --
+#+latex_header: \usepackage[inline]{enumitem}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: properties_cache
+# key: <pc
+# --
+:header-args:${0:lang}: :cache ${1:value}

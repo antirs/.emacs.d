@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: properties_session
+# key: <ps
+# --
+:header-args:${0:lang}: :session ${1:value}

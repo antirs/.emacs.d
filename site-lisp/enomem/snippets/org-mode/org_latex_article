@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: org_latex_article
+# key: <ola
+# --
+#+latex_class: article
+#+latex_class_options: [a4paper,12pt]

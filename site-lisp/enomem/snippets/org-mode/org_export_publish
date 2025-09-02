@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: org_export_publish
+# key: <oep
+# --
+(setq org-publish-project-alist
+      '(("${0:file}"
+         :base-directory "./"
+         :publishing-directory "./_pub"
+         :publishing-function org-latex-publish-to-pdf
+         :exclude "lib/.*"
+         :recursive t)))

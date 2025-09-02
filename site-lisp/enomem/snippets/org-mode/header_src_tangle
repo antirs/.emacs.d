@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: header_src_tangle
+# key: <hst
+# --
+#+header: :tangle ${0:value}

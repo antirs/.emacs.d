@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_latex_lang
+# key: <oll
+# --
+#+latex_header: \usepackage[english,${0:lang}}]{babel}

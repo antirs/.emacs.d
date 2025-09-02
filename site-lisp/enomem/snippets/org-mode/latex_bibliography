@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: latex_bibliography
+# key: <lb
+# --
+\usepackage[backend=biber,style=numeric,sorting=none,url=false]{biblatex}
+\addbibresource{~/.org/bibliography/biblio.bib}
+\addbibresource{~/.org/bibliography/literature/literature.bib}
+\addbibresource{~/.org/bibliography/web/web.bib}
+\printbibliography

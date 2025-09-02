@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_ignore
+# key: <oi
+# --
+* Utility                                                            :ignore:

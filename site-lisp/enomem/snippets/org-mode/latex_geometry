@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: latex_geometry
+# key: <lg
+# --
+\newgeometry{left=2.5cm,right=2.5cm,top=2cm,bottom=2.5cm}

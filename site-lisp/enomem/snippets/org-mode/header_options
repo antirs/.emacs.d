@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: header_options
+# key: <heop
+# --
+#+category: ░ ${0:category} ░
+#+filetags: ${1:tag}
+#+columns: %8TODO %40ITEM %1PRIORITY %5Effort %5Effort(Effort Children){:} %10CLOCKSUM
+#+options: ^:nil toc:nil num:nil author:nil timestamp:nil
+#+options: H:99 prop:nil d:nil tags:nil p:t c:nil pri:t

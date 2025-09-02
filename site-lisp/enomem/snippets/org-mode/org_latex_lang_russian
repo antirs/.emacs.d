@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_latex_lang
+# key: <ollr
+# --
+#+latex_header: \addto{\captionsrussian}{\renewcommand*{\contentsname}{Содержание}}

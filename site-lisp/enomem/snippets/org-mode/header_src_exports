@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: header_src_exports
+# key: <hsex
+# --
+#+header: :exports ${0:value}

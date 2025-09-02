@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: properties_tangle
+# key: <pt
+# --
+:header-args:${0:lang}: :tangle ${1:value}

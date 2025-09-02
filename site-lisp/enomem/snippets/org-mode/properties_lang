@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: properties_lang
+# key: <pl
+# --
+:header-args:${0:lang}: :tangle ${1:file.sh}
+:header-args:${0:lang}+: :session *${1:file}*
+:header-args:${0:lang}+: :cache yes

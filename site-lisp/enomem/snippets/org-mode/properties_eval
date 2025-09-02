@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: properties_eval
+# key: <pev
+# --
+:header-args:${0:lang}: :eval ${1:value}

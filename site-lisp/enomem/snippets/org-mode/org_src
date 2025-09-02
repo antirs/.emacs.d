@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_src
+# key: <os
+# --
+src_${0:lang}[${1:header-args}]{${0:body}}

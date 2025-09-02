@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: org_latex_lang
+# key: <ols
+# --
+#+latex_header: \usepackage{minted}

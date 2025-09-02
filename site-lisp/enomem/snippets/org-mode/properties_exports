@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: properties_exports
+# key: <pex
+# --
+:header-args:${0:lang}: :exports ${1:value}

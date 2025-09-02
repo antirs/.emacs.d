@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: properties_post
+# key: <pp
+# --
+:header-args:${0:lang}: :post ${0:name}[${1:in-header-args}](${2:args}) ${3:out-header-args}

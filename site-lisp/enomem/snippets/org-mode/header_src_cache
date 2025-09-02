@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: header_src_cache
+# key: <hsc
+# --
+#+header: :cache ${0:value}
