@@ -72,6 +72,9 @@
 ;;; ahg
 (use-package ahg)
 
+;;; quilt
+(use-package quilt)
+
 ;;; dsvn
 (use-package dsvn :disabled)
 
