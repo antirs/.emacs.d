@@ -1,6 +1,6 @@
 ;;; perl-mode
 (use-package perl-mode
-  :mode ("\\(\\.cgi\\|\\.t\\)\\'" . perl-mode))
+  :mode ("\\(\\.cgi\\|\\.t\\|alienfile\\|repl.rc\\)\\'" . perl-mode))
 
 ;;; cperl-mode
 (use-package cperl-mode
