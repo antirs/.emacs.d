@@ -1,0 +1,272 @@
+--- org-9.7.17/ob-perl.el	2025-10-10 23:24:20.802815040 +0300
++++ org-9.7.17/ob-perl.el	2025-10-13 20:49:29.497352601 +0300
+@@ -42,6 +42,116 @@
+ (defvar org-babel-perl-command "perl"
+   "Name of command to use for executing perl code.")
+ 
++(defvar org-babel-perl-eoe-indicator "org_babel_perl;"
++  "Command to indicate that evaluation has completed.")
++
++(defvar org-babel-perl-eoe-output "org_babel_perl_eoe"
++  "String to indicate that evaluation has completed.")
++
++(defvar org-babel-perl-session-wrapper-method "\
++{
++    my $babel_sub = sub {
++        %s
++    };
++    open my $BOH, qq(>%s) or die qq(Perl: Could not open output file.$/);
++    my $rv = &$babel_sub();
++    my $rt = ref $rv;
++    if ( qq(ARRAY) eq $rt ) {
++        local $\\=$/;
++        local $, = qq(\t);
++        foreach my $rv (@$rv) {
++            my $rt = ref $rv;
++            if ( qq(ARRAY) eq $rt ) {
++                print $BOH @$rv;
++            } else {
++                print $BOH $rv;
++            }
++        }
++    } else {
++        print $BOH $rv;
++    }
++    close $BOH;
++}
++")
++
++(defvar org-babel-perl-repl-program "re.pl"
++  "Program that runs re.pl.  Could be pdl2 for exampls.")
++
++(defvar org-babel-perl-repl-startfile nil
++  "File whose contents are sent to the re.pl as its initial input.")
++
++(defvar org-babel-perl-repl-switches ""
++  "Switches that are passed to re.pl.
++This could be for example --profile=<your profile>.")
++
++(defvar org-babel-perl-repl-readline-width 79
++  "Readline screen width.
++Needed to strip whitespaces from output.")
++
++(defconst org-babel-perl-repl-prompt "$​"
++  "Fancy prompt used to parse re.pl output.")
++
++(defconst org-babel-perl-repl-continuation-prompt ">​"
++  "Fancy prompt used to parse re.pl continue output.")
++
++(defconst org-babel-perl-repl-prompt-regex
++  (rx-to-string `(seq bol (literal ,org-babel-perl-repl-prompt)))
++  "Fancy prompt regexp used by comint to designate prompt.")
++
++(defvar org-babel-perl-repl-code-eoe-indicator "\
++sub org_babel_perl {
++    print \"org_babel_perl_eoe\n\";
++}
++"
++  "Subroutine to make indication that evaluation has completed.")
++
++(defvar org-babel-perl-repl-code-replrc
++  (concat "\
++$_REPL->prompt('$​');           # fallback (if no FancyPromt)
++
++# load convinient plugins
++$_REPL->load_plugin('LexEnv');
++$_REPL->load_plugin('FindVariable');
++$_REPL->load_plugin('Packages');
++
++# load required plugins
++# FancyPromt is required to strip prompt
++$_REPL->load_plugin('FancyPrompt');
++
++$_REPL->fancy_prompt(
++    sub {
++        my $self = shift;
++        sprintf '$​';
++    });
++
++$_REPL->fancy_continuation_prompt(
++    sub {
++        my $self = shift;
++        sprintf '>​';
++    });
++
++# PrintControl is required to strip return values
++push @{$_REPL->{_plugin_locator}{search_path}}, 'PDL::Perldl2::Plugin';
++$_REPL->load_plugin('PrintControl');
++"
++          (format "$readline::rl_screen_width = %d;\n\n"
++                  org-babel-perl-repl-readline-width)
++          org-babel-perl-repl-code-eoe-indicator)
++  "Necessary repl.rc changes to interact with ob-perl.el.")
++
++(defun goto-process-mark (buffer-name)
++  "Move point in buffer and window to current process mark."
++  (save-current-buffer
++    (let* ((buffer (get-buffer-create buffer-name))
++           (buffer-window)
++           (buffer-process))
++      (setq buffer-window (get-buffer-window buffer t))
++      (setq buffer-process (get-buffer-process buffer))
++      (setq buffer-point (process-mark buffer-process))
++      (set-window-point buffer-window buffer-point)
++      (set-buffer buffer)
++      (goto-char buffer-point))))
++
+ (defun org-babel-execute:perl (body params)
+   "Execute a block of Perl code with Babel.
+ This function is called by `org-babel-execute-src-block'."
+@@ -58,9 +168,12 @@ This function is called by `org-babel-ex
+      (org-babel-pick-name
+       (cdr (assq :rowname-names params)) (cdr (assq :rownames params))))))
+ 
+-(defun org-babel-prep-session:perl (_session _params)
+-  "Prepare SESSION according to the header arguments in PARAMS."
+-  (error "Sessions are not supported for Perl"))
++(defun org-babel-prep-session:perl (session _params)
++  "Prepare SESSION according to the header arguments specified in PARAMS.
++Currently assigning variables are not actually supported.  Just
++pass session name for initialization code."
++  (let* ((session (org-babel-perl-initiate-session session))
++         session)))
+ 
+ (defun org-babel-variable-assignments:perl (params)
+   "Return list of perl statements assigning the block's variables."
+@@ -96,9 +209,36 @@ specifying a var of the same value."
+ 
+ (defvar org-babel-perl-buffers '(:default . nil))
+ 
+-(defun org-babel-perl-initiate-session (&optional _session _params)
+-  "Return nil because sessions are not supported by perl."
+-  nil)
++(defun org-babel-perl-initiate-session (&optional session _params)
++  "Initiate a session named SESSION according to PARAMS."
++  (unless (string= session "none")
++    (let ((found (catch 'found
++                   (dolist (p (process-list))
++                     (if (string= session
++                                  (buffer-name (process-buffer p)))
++                         (throw 'found t))))))
++      (if (not found)
++          ;; create new session
++          (save-current-buffer
++            (let ((initialization-code org-babel-perl-repl-code-replrc))
++              (setq comint-session
++                    (make-comint session
++                                 org-babel-perl-repl-program
++                                 org-babel-perl-repl-startfile
++                                 org-babel-perl-repl-switches))
++              (if (bufferp comint-session)
++                  (with-current-buffer (get-buffer-create comint-session)
++                    (rename-buffer session)))
++              (org-babel-comint-in-buffer session
++                (setq comint-use-prompt-regexp t)
++                (setq comint-prompt-regexp org-babel-perl-repl-prompt-regex)
++                (setq comint-eol-on-send t)
++                (setq comint-move-point-for-output t)
++                (insert initialization-code)
++                (comint-send-input nil t))
++              session))
++        ;; return existing session
++        session))))
+ 
+ (defvar org-babel-perl-wrapper-method "{
+     my $babel_sub = sub {
+@@ -134,8 +274,9 @@ specifying a var of the same value."
+ If RESULT-TYPE equals `output' then return a list of the outputs
+ of the statements in BODY, if RESULT-TYPE equals `value' then
+ return the value of the last statement in BODY, as elisp."
+-  (when session (error "Sessions are not supported for Perl"))
+-  (let* ((body (concat org-babel-perl-preface ibody))
++  (if session (org-babel-perl-evaluate-session
++               session ibody result-type result-params)
++    (let* ((body (concat org-babel-perl-preface ibody))
+ 	 (tmp-file (org-babel-temp-file "perl-"))
+ 	 (tmp-babel-file (org-babel-process-file-name
+ 			  tmp-file 'noquote)))
+@@ -153,8 +294,84 @@ return the value of the last statement i
+       (when results
+         (org-babel-result-cond result-params
+ 	  (org-babel-eval-read-file tmp-file)
++          (org-babel-import-elisp-from-file tmp-file '(16))))))))
++
++(defun org-babel-perl-evaluate-session
++    (session body &optional result-type result-params)
++  "Pass BODY to the re.pl process in SESSION.
++If RESULT-TYPE equals `output' then return standard output as a
++string.  If RESULT-TYPE equals `value' then return the value of
++the last statement in BODY, as elisp."
++  (let* ((body (concat org-babel-perl-preface body))
++         (tmp-file (org-babel-temp-file "perl-"))
++         (tmp-babel-file (org-babel-process-file-name
++                          tmp-file 'noquote))
++         (session (org-babel-perl-initiate-session session))
++         (prompt-regexp org-babel-perl-repl-prompt-regex))
++    (let ((results
++           (pcase result-type
++             (`output
++              (with-temp-file tmp-file
++                (mapconcat #'org-babel-perl-strip-repl-fancy-prompt
++                 (org-babel-comint-with-output
++                     (session org-babel-perl-eoe-output t body)
++                   (setq comint-prompt-regexp prompt-regexp)
++                   (insert (org-trim body)
++                           "\n" org-babel-perl-eoe-indicator)
++                   (comint-send-input nil t))
++                 "\n")
++                (buffer-string)))
++             (`value
++              (with-temp-buffer
++                (mapconcat #'org-babel-perl-strip-repl-fancy-prompt
++                 (org-babel-comint-in-buffer session
++                   (setq comint-prompt-regexp prompt-regexp)
++                   (goto-process-mark session)
++                   (insert (org-trim (format
++                                      org-babel-perl-session-wrapper-method
++                                      body tmp-babel-file))
++                           "\n" org-babel-perl-eoe-indicator)
++                   (comint-send-input nil t)
++                   (org-babel-comint-wait-for-output session))
++                 "\n")
++                (buffer-string))))))
++      (when results
++        (org-babel-result-cond result-params
++          (org-babel-eval-read-file tmp-file)
+           (org-babel-import-elisp-from-file tmp-file '(16)))))))
+ 
++(defun org-babel-perl-strip-repl-fancy-prompt (string)
++  "Remove prompt cruft from a string of shell output."
++  ;; remove everything after EOE
++  (if (string-match "org_babel_perl_eoe" string)
++      (setq string (substring string 0 (match-beginning 0))))
++  (let ((match-readline
++         (rx-to-string
++          ;; " \\{79\\}\10  \15"
++          `(seq (= ,org-babel-perl-repl-readline-width ; readline width
++                   (literal " "))                      ; spaces
++                (literal"\10  \15"))))                 ; readline designator
++        (match-prompt
++         (rx-to-string
++          ;; "\\$+​\\|>+​"
++          `(|                           ; prompt alternatives
++            (seq (+ "$") "​")            ; prompt designator
++            (seq (+ ">") "​"))))         ; prompt continuation designator
++        (newstring))
++    (setq newstring
++          (with-output-to-string
++            (progn
++              ;; remove readline designators
++              (while (string-match match-readline string)
++                (progn (princ (substring string 0 (match-beginning 0)))
++                       (setq string (substring string (match-end 0)))))
++              (princ string))))
++    ;; remove fancy prompt designators
++    (while (string-match match-prompt newstring)
++      (insert (substring newstring 0 (match-beginning 0)))
++      (setq newstring (substring newstring (match-end 0))))
++    (insert newstring)))
++
+ (provide 'ob-perl)
+ 
+ ;;; ob-perl.el ends here
