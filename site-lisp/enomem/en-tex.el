@@ -83,6 +83,7 @@
   (setq reftex-plug-into-AUCTeX t)
   (setq reftex-default-bibliography '("~/.org/bibliography/biblio.bib"
                                       "~/.org/bibliography/literature/literature.bib"
+                                      "~/.org/bibliography/man/man.bib"
                                       "~/.org/bibliography/web/web.bib"))
   :bind (:map reftex-mode-map
               ("M-s l c" . 'reftex-citation))
@@ -117,6 +118,7 @@
   (setq bibtex-completion-bibliography
         '("~/.org/bibliography/biblio.bib"
           "~/.org/bibliography/literature/literature.bib"
+          "~/.org/bibliography/man/man.bib"
           "~/.org/bibliography/web/web.bib"))
   (setq bibtex-completion-library-path '("~/.org/bibliography/_pdf"))
   (setq bibtex-completion-notes-path "~/.org/bibliography/_notes")
