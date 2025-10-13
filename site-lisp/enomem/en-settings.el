@@ -153,7 +153,6 @@
 
 ;;; winner
 (use-package winner
-  :config
   :hook (enomem-mode . winner-mode)
   :bind (:map winner-mode-map
               ("M-g M-j" . winner-undo)
