@@ -2431,8 +2431,8 @@
   :hook (org-mode . org-mode-edit-setup)
   :preface
   (defun org-mode-edit-setup ()
-    (setq fill-column 150)
-    (setq whitespace-line-column 150)
+    (setq fill-column nil)
+    (setq whitespace-line-column nil)
     (setq whitespace-style relaxed-space-whitespace-style)
     (whitespace-mode -1)
     (whitespace-mode t)))
