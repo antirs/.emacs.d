@@ -81,6 +81,9 @@
 ;;; magit-svn
 (use-package magit-svn)
 
+;;; diffed
+(use-package diffed)
+
 ;;; enomem/en-emacs
 (use-package enomem/en-emacs :load-path "site-lisp"
   :after window-purpose
