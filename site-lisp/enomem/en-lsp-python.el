@@ -7,6 +7,7 @@
   :hook (sage-shell:sage-mode . en-lsp-python/python-mode-setup)
   :preface
   (defun en-lsp-python/python-mode-setup ()
+    (setq lsp-disabled-clients '(pyls))
     (setq lsp-enabled-clients '(pylsp))
     (lsp-deferred)))
 
