@@ -3,6 +3,8 @@
 
 ;;; elisp-mode
 (use-package elisp-mode
+  :config
+  (setq max-lisp-eval-depth 10000)
   :bind (:map emacs-lisp-mode-map
               ("M-i M-s b" . eval-buffer)
               ("M-i M-s r" . eval-region)
