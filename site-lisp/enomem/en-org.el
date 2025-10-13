@@ -2031,6 +2031,7 @@
           (maxima . t)
           (octave . t)
           (org . t)
+          (perl . t)
           (plantuml . t)
           (python . t)
           (ruby . t)
@@ -2039,6 +2040,7 @@
           (sed . t)
           (shell . t)
           (sql . t)
+          (tcl . t)
           (tmux . t)))
   (setq org-confirm-babel-evaluate nil)
   (setq org-ditaa-jar-path "/usr/share/ditaa/ditaa.jar")
@@ -2061,11 +2063,17 @@
   :config
   (add-to-list 'org-babel-languages '(jupyter . t)))
 
+;;; ob-perl
+(use-package ob-perl)
+
 ;;; ob-python
 (use-package ob-python
   :config
   (setq py-default-interpreter
         (expand-file-name (concat (getenv "VIRTUAL_ENV") "/bin/ipython"))))
+
+;;; ob-tcl
+(use-package ob-tcl)
 
 ;;; ob-tmux
 (use-package ob-tmux
