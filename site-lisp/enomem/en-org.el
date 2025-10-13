@@ -1436,6 +1436,13 @@
                      (org-agenda-tag-filter-preset '("+ACTIVE" "-@mobile" "-#journal" "-#list" "-#habit" "-#stuck" "-#note" "-#quiz"))))
 
                    ))))
+  (setq org-ql-views
+        (list (cons "Project: Nice tools"
+                    (list :buffers-files nil
+                          :query '(tags "#nicetool")
+                          :sort nil
+                          :super-groups '((:auto-parent t))
+                          :title "Project: Nice tools"))))
 
 
   ;;         ;; Current
