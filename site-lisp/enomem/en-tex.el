@@ -126,6 +126,9 @@
         (lambda (fpath)
           (call-process "open" nil 0 nil fpath))))
 
+;;; latexdiff
+(use-package latexdiff)
+
 ;;; enomem/en-lsp-asy
 (use-package enomem/en-lsp-asy :load-path "site-lisp")
 
