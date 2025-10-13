@@ -2343,6 +2343,13 @@
               ("M-o M-r f" . 'org-roam-ref-find)
               ("M-o M-r t" . 'org-roam-tag-add)))
 
+;;; org-roam-ql
+(use-package org-roam-ql
+  :config
+  (setq org-roam-directory "~/.org/roam")
+  :bind (:map enomem-mode-map
+              ("M-o M-r q" . 'org-roam-ql-search)))
+
 ;;; citar-org-roam
 (use-package citar-org-roam
   :config
