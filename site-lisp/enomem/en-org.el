@@ -539,7 +539,7 @@
   (setq org-persist-default-expiry 30))
 
 ;;; org-modern
-(use-package org-modern
+(use-package org-modern :disabled
   :config
   (setq org-modern-todo t)
   (setq org-modern-todo-faces
