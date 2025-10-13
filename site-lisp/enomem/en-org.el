@@ -2087,6 +2087,7 @@
 (use-package oc
   :config
   (setq org-cite-global-bibliography '("~/.org/bibliography/biblio-all.bib"
+                                       "~/.org/bibliography/man/man.bib"
                                        "~/.org/bibliography/new/new.bib"
                                        "~/.org/bibliography/literature/literature.bib"
                                        "~/.org/bibliography/kolhoz/kolhoz.bib"
@@ -2136,6 +2137,7 @@
   :init
   (setq citar-notes-paths '("~/.org/bibliography/_notes"))
   (setq citar-bibliography '("~/.org/bibliography/biblio-all.bib"
+                             "~/.org/bibliography/man/man.bib"
                              "~/.org/bibliography/new/new.bib"
                              "~/.org/bibliography/literature/literature.bib"
                              "~/.org/bibliography/kolhoz/kolhoz.bib"
@@ -2155,6 +2157,7 @@
   (setq org-ref-default-bibliography
         '("~/.org/bibliography/biblio.bib"
           "~/.org/bibliography/literature/literature.bib"
+          "~/.org/bibliography/man/man.bib"
           "~/.org/bibliography/web/web.bib"))
   (setq org-ref-pdf-directory "~/.org/bibliography/_pdf")
   :bind (:map bibtex-mode-map
