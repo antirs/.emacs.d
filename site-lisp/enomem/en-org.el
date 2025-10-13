@@ -2159,6 +2159,7 @@
   :bind (:map bibtex-mode-map
               ("M-o M-r M-b" . 'citar-insert-bibtex))
   :bind (:map org-mode-map
+              ("M-o M-r M-b" . 'citar-insert-bibtex)
               ("M-o M-r M-l" . 'citar-insert-citation)
               ("M-o M-r M-o" . 'citar-open-entry)
               ("M-o M-r M-r" . 'citar-org-roam-ref-add)
