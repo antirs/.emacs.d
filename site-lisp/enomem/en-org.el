@@ -2226,6 +2226,11 @@
            (file+head "reference/book/${slug}.org"
                       "#+title: ${author} (${year}) ${title}, ${publisher}\n#+category: NONE\n#+filetags: :reference:book:draft:#note:\n#+columns: %8TODO %40ITEM %1PRIORITY %5Effort %5Effort(Effort Children){:} %10CLOCKSUM\n#+options: ^:nil\n\n* [[cite:&${citekey}][${author} (${year}) ${title}, ${publisher}]]\n")
            :unnarrowed t :immediate-finish t :jump-to-captured t)
+          ("rm" "reference/manual (roam)" plain "%?"
+           :if-new
+           (file+head "reference/man/${slug}.org"
+                      "#+title: ${title} (${year})\n#+category: NONE\n#+filetags: :reference:manual:draft:#note:\n#+columns: %8TODO %40ITEM %1PRIORITY %5Effort %5Effort(Effort Children){:} %10CLOCKSUM\n#+options: ^:nil\n\n* [[cite:&${citekey}][${title} (${year})]]\n")
+           :unnarrowed t :immediate-finish t :jump-to-captured t)
           ("rs" "reference/standard (roam)" plain "%?"
            :if-new
            (file+head "reference/standard/${slug}.org"
