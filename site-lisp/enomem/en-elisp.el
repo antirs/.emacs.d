@@ -2,7 +2,11 @@
 (use-package system/lisp :load-path "site-lisp")
 
 ;;; elisp-mode
-(use-package elisp-mode)
+(use-package elisp-mode
+  :bind (:map emacs-lisp-mode-map
+              ("M-i M-s b" . eval-buffer)
+              ("M-i M-s r" . eval-region)
+              ("M-i M-e" . ielm)))
 
 ;;; lisp-data-mode
 (use-package lisp-mode)
