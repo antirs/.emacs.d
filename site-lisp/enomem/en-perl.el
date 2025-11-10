@@ -22,6 +22,8 @@
   :hook (perl-mode . en-edit/perl-mode-setup)
   :preface
   (defun en-edit/perl-mode-setup ()
+    (setq whitespace-line-column 79)
+    (setq fill-column 79)
     (setq whitespace-style relaxed-space-whitespace-style)
     (en-edit/whitespace-mode-reload)))
 
