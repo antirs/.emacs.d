@@ -178,11 +178,11 @@
    ((t (:foreground "black" :background "brightyellow" :weight bold))))
   ;; org-babel
   (org-block-begin-line
-   ((t (:background "#51acab" :foreground "gray25"))))
+   ((t (:background "#51acab" :foreground "black"))))
   (org-block-end-line
-   ((t (:background "black" :foreground "gray25"))))
+   ((t (:background "black" :foreground "#51acab" :underline t))))
   (org-meta-line
-   ((t (:background "black" :foreground "gray25"))))
+   ((t (:background "black" :foreground "gray35"))))
   ;; org-colview
   (org-column
    ((t (:background "grey5" :foreground "white" :weight normal))))
