@@ -7,6 +7,12 @@
 ;;; whitespace
 (use-package whitespace
   :config
+  (setq default-whitespace-style
+        '(face
+          tabs spaces trailing lines space-before-tab newline
+          indentation empty space-after-tab
+          space-mark tab-mark newline-mark
+          missing-newline-at-eof))
   (setq space-whitespace-style
         '(face
           indentation::space
