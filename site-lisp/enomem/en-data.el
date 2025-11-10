@@ -7,4 +7,8 @@
 ;;; tawny-mode
 (use-package tawny-mode :load-path "site-lisp" :disabled)
 
+;;; sparql-mode
+(use-package sparql-mode :load-path "site-lisp"
+  :mode (("\\.sparql\\|\\.rq\\|\\.ru\\'" . sparql-mode)))
+
 (provide 'enomem/en-data)
