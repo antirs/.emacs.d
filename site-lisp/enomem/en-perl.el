@@ -39,4 +39,7 @@
 ;;; perl-completion
 (use-package perl-completion :load-path "site-lisp/enomem/scripts" :disabled)
 
+;;; enomem/en-fly-perl
+(use-package enomem/en-fly-perl :load-path "site-lisp")
+
 (provide 'enomem/en-perl)
