@@ -1,0 +1,45 @@
+From 57318e0bd5d7f3d5138a526882d0f867c8fbd5f5 Mon Sep 17 00:00:00 2001
+From: enomem <enomem@substation>
+Date: Fri, 31 Oct 2025 19:30:31 +0300
+Subject: [PATCH] lisp/ob-perl.el: Escape parenthesis in variables passed to
+ perl.
+
+* lisp/ob-perl.el (org-babel-perl--var-to-perl): Escape "(", ")" when
+passing variables to perl.
+
+`org-babel-perl--var-to-perl' passes variables to perl by wrapping
+their values in "q(%s)" expression. If string value contains
+parenthesis and they are not escaped variable can't be passed
+properly.
+---
+ lisp/ob-perl.el | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/lisp/ob-perl.el b/lisp/ob-perl.el
+index fc7813973..ca7ad1fbe 100644
+--- org-9.7.17/ob-perl.el
++++ org-9.7.17/ob-perl.el
+@@ -84,14 +84,18 @@ specifying a var of the same value."
+ 	(concat "my $" (symbol-name varn) "=" (when lvar "\n")
+ 		(org-babel-perl--var-to-perl var)
+ 		";\n"))
+-    (let ((prefix (make-string (* 2 org-babel-perl--lvl) ?\ )))
++    (let ((prefix (make-string (* 2 org-babel-perl--lvl) ?\ ))
++          (match-braces
++           (rx-to-string `(| "(" ")")))) ; "[()]"
+       (concat prefix
+ 	      (if (listp var)
+ 		  (let ((org-babel-perl--lvl (1+ org-babel-perl--lvl)))
+ 		    (concat "[\n"
+ 			    (mapconcat #'org-babel-perl--var-to-perl var "")
+ 			    prefix "]"))
+-		(format "q(%s)" var))
++		(format "q(%s)"
++                        (replace-regexp-in-string match-braces
++                         (lambda (str) (concat "\\\\" str)) var)))
+ 	      (unless (zerop org-babel-perl--lvl) ",\n")))))
+ 
+ (defvar org-babel-perl-buffers '(:default . nil))
+-- 
+2.50.1
+
