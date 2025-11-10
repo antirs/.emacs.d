@@ -11,4 +11,8 @@
 (use-package sparql-mode :load-path "site-lisp"
   :mode (("\\.sparql\\|\\.rq\\|\\.ru\\'" . sparql-mode)))
 
+;;; enomem/en-fold
+(use-package enomem/en-fold :load-path "site-lisp"
+  :hook (ttl-mode . origami-mode))
+
 (provide 'enomem/en-data)
