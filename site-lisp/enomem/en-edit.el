@@ -36,6 +36,12 @@
           space-before-tab::space
           tabs
           trailing))
+  (setq free-space-whitespace-style
+        '(face
+          ;; lines
+          space-after-tab::space
+          space-before-tab::space
+          tabs))
   (setq relaxed-tab-whitespace-style
         '(face
           ;; lines
@@ -43,6 +49,12 @@
           space-before-tab::tab
           spaces
           trailing))
+  (setq free-tab-whitespace-style
+        '(face
+          ;; lines
+          space-after-tab::tab
+          space-before-tab::tab
+          spaces))
   (setq whitespace-space-regexp "^\\( +\\| +\t+\\)")
   :preface
   (defun en-edit/fill-120 ()
