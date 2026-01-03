@@ -2040,6 +2040,7 @@
           (org . t)
           (perl . t)
           (plantuml . t)
+          (prolog . t)
           (python . t)
           (ruby . t)
           (scheme . t)
@@ -2079,6 +2080,9 @@
 
 ;;; ob-perl
 (use-package ob-perl)
+
+;;; ob-prolog
+(use-package ob-prolog)
 
 ;;; ob-python
 (use-package ob-python
