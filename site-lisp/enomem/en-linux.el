@@ -20,6 +20,9 @@
 ;;; guix
 (use-package guix)
 
+;;; dts-mode
+(use-package dts-mode)
+
 ;;; enomem/en-edit
 (use-package enomem/en-edit :load-path "site-lisp"
   :hook (systemtap-mode . enomem/en-edit/systemtap-mode-setup)
