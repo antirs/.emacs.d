@@ -6,6 +6,7 @@
 (use-package system/art)
 (use-package system/build)
 (use-package system/c++)
+(use-package system/data)
 (use-package system/dev)
 (use-package system/dict)
 (use-package system/embedded)
