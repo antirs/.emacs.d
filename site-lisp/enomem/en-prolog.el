@@ -19,6 +19,9 @@
     (setq prolog-system 'mercury)
     (setq prolog-program-name nil)))
 
+;;; enomem/en-lsp-prolog
+(use-package enomem/en-lsp-prolog :load-path "site-lisp")
+
 ;;; enomem/en-edit
 (use-package enomem/en-edit :load-path "site-lisp"
   :hook ((prolog-mode mercury-mode) . en-edit/prolog-mode-setup)
@@ -30,5 +33,8 @@
 ;;; enomem/en-fold
 (use-package enomem/en-fold :load-path "site-lisp"
   :hook ((mercury-mode prolog-mode) . origami-mode))
+
+;;; enomem/en-fly-prolog
+(use-package enomem/en-fly-prolog :load-path "site-lisp")
 
 (provide 'enomem/en-prolog)
