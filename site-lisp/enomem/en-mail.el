@@ -39,6 +39,14 @@
               ("M-t m p" . notmuch-poll)
               ("M-t m n" . notmuch)))
 
+;;; notmuch-address
+(use-package notmuch-addr
+  :config
+  :hook (notmuch-address . en-main/notmuch-addr)
+  :preface
+  (defun en-main/notmuch-addr ()
+    (notmuch-addr-setup)))
+
 ;;; enomem/en-crypt
 (use-package enomem/en-crypt :load-path "site-lisp")
 
