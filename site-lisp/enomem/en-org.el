@@ -2048,6 +2048,7 @@
           (sclang . t)
           (sed . t)
           (shell . t)
+          (sparql . t)
           (sql . t)
           (tcl . t)
           (tmux . t)))
@@ -2093,6 +2094,10 @@
 
 ;;; ob-restclient
 (use-package ob-restclient)
+
+;;; ob-sparql
+(use-package ob-sparql
+  :after ob)
 
 ;;; ob-tcl
 (use-package ob-tcl)
