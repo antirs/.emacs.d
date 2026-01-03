@@ -10,6 +10,10 @@
   (defun en-web/web-mode-setup ()
     (setq browse-url-browser-function 'browse-url-chromium)))
 
+;;; wat-ts-mode
+(use-package wat-ts-mode
+  :mode ("\\.wat\\'" . 'wat-ts-mode))
+
 ;;; emmet-mode
 (use-package emmet-mode
   :hook (web-mode . emmet-mode))
