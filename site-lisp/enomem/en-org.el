@@ -573,6 +573,11 @@
               ("M-o M-A g" . 'org-toggle-archive-tag)
               ("M-o M-A a" . 'org-archive-to-archive-sibling)))
 
+;;; org-attach
+(use-package org-attach
+  :config
+  (setq org-attach-use-inheritance nil))
+
 ;;; org-expire
 (use-package org-expiry
   :bind (:map org-mode-map
