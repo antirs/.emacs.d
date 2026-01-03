@@ -4,7 +4,7 @@
 # --
 :PROPERTIES:
 :header-args: :results output drawer replace :wrap example
-:header-args+: :cache yes
+:header-args+: :cache no
 :header-args+: :comments noweb
 :header-args+: :eval never-export
 :header-args+: :exports code
