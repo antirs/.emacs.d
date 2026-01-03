@@ -23,6 +23,9 @@
               ("M-t t w e" . treemacs-edit-workspaces)
               ("M-t t w s" . treemacs-switch-workspace)))
 
+;;; persp-mode
+(use-package persp-mode)
+
 ;;; hydra
 (use-package hydra
   :config
