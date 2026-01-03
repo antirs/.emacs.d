@@ -23,6 +23,9 @@
               ("M-t t w e" . treemacs-edit-workspaces)
               ("M-t t w s" . treemacs-switch-workspace)))
 
+;;; treemacs-projectile
+(use-package treemacs-projectile)
+
 ;;; persp-mode
 (use-package persp-mode)
 
