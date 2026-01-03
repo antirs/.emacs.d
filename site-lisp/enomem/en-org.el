@@ -2042,6 +2042,7 @@
           (plantuml . t)
           (prolog . t)
           (python . t)
+          (restclient . t)
           (ruby . t)
           (scheme . t)
           (sclang . t)
@@ -2089,6 +2090,9 @@
   :config
   (setq py-default-interpreter
         (expand-file-name (concat (getenv "VIRTUAL_ENV") "/bin/ipython"))))
+
+;;; ob-restclient
+(use-package ob-restclient)
 
 ;;; ob-tcl
 (use-package ob-tcl)
