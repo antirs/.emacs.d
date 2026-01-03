@@ -66,7 +66,12 @@
   :hook (compilation-filter . ansi-color-compilation-filter))
 
 ;;; projectile
-(use-package projectile)
+(use-package projectile
+  :hook (prog-mode . projectile-mode)
+  :hook (text-mode . projectile-mode)
+  :bind (:map projectile-mode-map
+              ("M-t M-p d" . 'projectile-discover-projects-in-directory)
+              ("M-t M-p s" . 'projectile-switch-project)))
 
 ;;; enomem/en-fold
 (use-package enomem/en-fold :load-path "site-lisp"
