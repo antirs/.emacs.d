@@ -14,6 +14,9 @@
               ("M-s M-h" . 'cperl-perldoc-at-point))
   :hook (perl-mode . cperl-mode))
 
+;;; raku-mode
+(use-package raku-mode)
+
 ;;; enomem/en-lsp-perl
 (use-package enomem/en-lsp-perl :load-path "site-lisp")
 
