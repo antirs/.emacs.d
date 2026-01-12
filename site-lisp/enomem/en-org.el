@@ -2047,6 +2047,7 @@
           (plantuml . t)
           (prolog . t)
           (python . t)
+          (raku . t)
           (restclient . t)
           (ruby . t)
           (scheme . t)
@@ -2096,6 +2097,9 @@
   :config
   (setq py-default-interpreter
         (expand-file-name (concat (getenv "VIRTUAL_ENV") "/bin/ipython"))))
+
+;;; ob-raku
+(use-package ob-raku)
 
 ;;; ob-restclient
 (use-package ob-restclient)
