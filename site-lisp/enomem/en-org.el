@@ -448,15 +448,15 @@
            (hlt-unhighlight-all-prop 'hlt-region-or-buffer-limits)
            (hlt-unhighlight-region)
            (let ((isearch-regexp "\\(\u3000\\([^\u3000\n]\\|\n\\)*?\u3000\\)"))
-             (hlt-highlight-isearch-matches 'en-hi-red nil nil nil "\\(\u3000\\([^\u3000\n]\\|\n\\)*?\u3000\\)"))
+             (hlt-highlight-isearch-matches 'en-hi-purple nil nil nil "\\(\u3000\\([^\u3000\n]\\|\n\\)*?\u3000\\)"))
            (let ((isearch-regexp "\\(\u2000\\([^\u2000\n]\\|\n\\)*?\u2000\\)"))
              (hlt-highlight-isearch-matches 'en-hi-aquamarine nil nil nil "\\(\u2000\\([^\u2000\n]\\|\n\\)*?\u2000\\)"))
            (let ((isearch-regexp "\\(\u2001\\([^\u2001\n]\\|\n\\)*?\u2001\\)"))
-             (hlt-highlight-isearch-matches 'en-hi-pink-b nil nil nil "\\(\u2001\\([^\u2001\n]\\|\n\\)*?\u2001\\)"))
+             (hlt-highlight-isearch-matches 'en-hi-purple-b nil nil nil "\\(\u2001\\([^\u2001\n]\\|\n\\)*?\u2001\\)"))
            (let ((isearch-regexp "\\(\u2002\\([^\u2002\n]\\|\n\\)*?\u2002\\)"))
-             (hlt-highlight-isearch-matches 'en-hi-pink nil nil nil "\\(\u2002\\([^\u2002\n]\\|\n\\)*?\u2002\\)"))
+             (hlt-highlight-isearch-matches 'en-hi-blue nil nil nil "\\(\u2002\\([^\u2002\n]\\|\n\\)*?\u2002\\)"))
            (let ((isearch-regexp "\\(\u2003\\([^\u2003\n]\\|\n\\)*?\u2003\\)"))
-             (hlt-highlight-isearch-matches 'en-hi-blue nil nil nil "\\(\u2003\\([^\u2003\n]\\|\n\\)*?\u2003\\)"))
+             (hlt-highlight-isearch-matches 'en-hi-pink nil nil nil "\\(\u2003\\([^\u2003\n]\\|\n\\)*?\u2003\\)"))
            (let ((isearch-regexp "\\(\u2004\\([^\u2004\n]\\|\n\\)*?\u2004\\)"))
              (hlt-highlight-isearch-matches 'en-hi-salmon nil nil nil "\\(\u2004\\([^\u2004\n]\\|\n\\)*?\u2004\\)"))
            (let ((isearch-regexp "\\(\u2005\\([^\u2005\n]\\|\n\\)*?\u2005\\)"))
@@ -467,7 +467,7 @@
              (hlt-highlight-isearch-matches 'en-hi-white nil nil nil "\\(\u2007\\([^\u2007\n]\\|\n\\)*?\u2007\\)")))))
   (setq marker-alist '((?1 "red (main)" "\u3000")         ; main
                        (?2 "aquamarine (ideas)" "\u2000") ; ideas
-                       (?3 "pink-b (terms)" "\u2001")   ; terms, kernel, anchors
+                       (?3 "purlpe-b (terms)" "\u2001")   ; terms, kernel, anchors
                        (?4 "pink (keywords)" "\u2002")  ; tags, keywords
                        (?5 "blue (abbrv)" "\u2003")     ; abbreviations, index
                        (?6 "salmon (lists)" "\u2004")   ; lists, enums
