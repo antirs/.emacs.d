@@ -260,13 +260,14 @@
 (use-package hi-lock
   :config
   (defface en-hi-red '((t (:inherit 'hi-yellow :underline "black" :bold t))) "")
+  (defface en-hi-purple '((t (:inherit 'hi-yellow :foreground "white" :background "purple2" :underline "black" :bold t))) "")
   (defface en-hi-aquamarine '((t (:inherit 'hi-aquamarine))) "")
-  (defface en-hi-pink-b '((t (:inherit 'hi-pink :bold t :underline "black"))) "")
+  (defface en-hi-purple-b '((t (:inherit 'hi-black-b :foreground "purple3" :background "#FFFFFF" :bold t :underline "black"))) "")
   (defface en-hi-pink '((t (:inherit 'hi-pink))) "")
   (defface en-hi-blue '((t (:inherit 'hi-black-b :foreground "black" :background "#65a7e2" :underline "black"))) "")
   (defface en-hi-salmon '((t (:inherit 'hi-salmon))) "")
   (defface en-hi-green '((t (:inherit 'hi-green))) "")
   (defface en-hi-gray '((t (:inherit 'hi-blue))) "")
-  (defface en-hi-white '((t (:inherit 'hi-red-b :foreground "white" :background "black" :underline "black"))) ""))
+  (defface en-hi-white '((t (:inherit 'hi-red :foreground "#ffffff" :background "black" :underline "black"))) ""))
 
 (provide 'enomem/en-style)
