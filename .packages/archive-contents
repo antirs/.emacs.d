@@ -6101,6 +6101,17 @@
 	     (:authors
 	      ("Daiki Ueno" . "ueno@gnu.org"))
 	     (:maintainer "Daiki Ueno" . "ueno@gnu.org"))])
+ (plz .
+      [(0 7 1)
+       ((emacs
+         (26 3)))
+       "HTTP library" tar
+       ((:url . "https://github.com/alphapapa/plz.el")
+        (:keywords "comm" "network" "http")
+        (:maintainer "Adam Porter" . "adam@alphapapa.net")
+        (:authors
+         ("Adam Porter" . "adam@alphapapa.net"))
+        (:commit . "70ebd6edea2b5c376776cd747bc378b07f0e6646"))])
  (queue .
 	[(0 2)
 	 nil "Queue data structure" tar
