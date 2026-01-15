@@ -54,6 +54,9 @@
   :config
   (delete '("\\.nw\\'" . poly-noweb-mode) auto-mode-alist))
 
+;;; quarto-mode
+(use-package quarto-mode)
+
 ;;; poly-wdl
 (use-package poly-wdl :disabled
   :hook (wdl-mode . polymode-minor-mode))
