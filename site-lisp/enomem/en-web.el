@@ -65,6 +65,9 @@
         (when (re-search-forward "\"__formtok\" value=\"\\(.*?\\)\"" nil t)
           (setq my-restclient-token (match-string 1)))))))
 
+;;; webdriver
+(use-package webdriver)
+
 ;;; enomem/en-edit
 (use-package enomem/en-edit :load-path "site-lisp"
   :hook (web-mode . en-edit/web-mode-setup)
