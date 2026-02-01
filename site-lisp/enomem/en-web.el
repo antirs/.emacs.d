@@ -12,7 +12,8 @@
 
 ;;; wat-ts-mode
 (use-package wat-ts-mode
-  :mode ("\\.wat\\'" . 'wat-ts-mode))
+  :mode ("\\.wat\\'" . 'wat-ts-mode)
+  :mode ("\\.wast\\'" . 'wat-ts-mode))
 
 ;;; emmet-mode
 (use-package emmet-mode
