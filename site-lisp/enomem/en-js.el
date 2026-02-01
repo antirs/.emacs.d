@@ -44,6 +44,7 @@
 ;;; indium
 (use-package indium
   :config
+  (setq indium-chrome-executable "chromium")
   (setq indium-chrome-data-dir "/tmp/chromium")
   (setq indium-chrome-use-temporary-profile t)
   :hook ((js-mode js-jsx-mode typescript-mode) . indium-interaction-mode)
