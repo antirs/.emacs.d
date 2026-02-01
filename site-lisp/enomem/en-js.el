@@ -55,6 +55,7 @@
               ("M-i M-C" . indium-connect)
               ("M-i M-D" . indium-switch-to-debugger)
               ("M-i M-L" . indium-launch)
+              ("M-i M-R" . indium-reload)
               ("M-i M-S" . indium-scratch)
               ("M-i M-Z" . indium-switch-to-repl-buffer)
               ("M-i M-x d" . indium-eval-defun)
