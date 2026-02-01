@@ -83,7 +83,23 @@
   :preface
   (defun en-js/indium-interaction-mode-setup ()
     (if (string-equal (buffer-name) "*JS scratch*")
+        (add-to-list 'completion-at-point-functions 'indium-repl--complete-or-indent)
         (eldoc-mode -1))))
+
+;;; indium-repl
+(use-package indium-repl
+  :hook (indium-repl-mode . en-js/indium-repl-mode-setup)
+  :preface
+  (defun en-js/indium-repl-mode-setup ()
+    (if (string-equal (buffer-name) "*JS REPL*")
+        (add-to-list 'completion-at-point-functions 'indium-repl--complete-or-indent)
+        (eldoc-mode -1))))
+
+;;; kite-mini
+(use-package kite-mini
+  :config
+  (setq kite-mini-remote-host "127.0.0.1")
+  (setq kite-mini-remote-port 9229))
 
 ;;; tide
 (use-package tide
