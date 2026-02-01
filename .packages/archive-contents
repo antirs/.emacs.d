@@ -6009,6 +6009,13 @@
 	    ("Philip Kaludercic" . "philipk@posteo.net")
 	    ("Daniel Mendler" . "mail@daniel-mendler.de"))
 	   (:commit . "3809be4d24a301c78d40bd00fc15bb763e0a3a2a"))])
+ (firefox-javascript-repl
+  . [(0 9 5) ((emacs (26 1))) "Jack into Firefox" tar
+     ((:maintainer "Thomas Fitzsimmons" . "fitzsim@fitzsim.org")
+      (:authors ("Thomas Fitzsimmons" . "fitzsim@fitzsim.org"))
+      (:url
+       . "https://elpa.gnu.org/packages/firefox-javascript-repl.html")
+      (:commit . "fee99c20f1f4684ed845eeac9eda46fcde6bf1e9"))])
  (mathjax .
 	 [(0 1)
 	  ((emacs
@@ -6112,6 +6119,14 @@
         (:authors
          ("Adam Porter" . "adam@alphapapa.net"))
         (:commit . "70ebd6edea2b5c376776cd747bc378b07f0e6646"))])
+ (pulsar
+  . [(1 0 1) ((emacs (28 1)))
+     "Pulse highlight on demand or after select functions" tar
+     ((:url . "https://github.com/protesilaos/pulsar")
+      (:keywords "convenience" "pulse" "highlight")
+      (:maintainer "Protesilaos Stavrou" . "info@protesilaos.com")
+      (:authors ("Protesilaos Stavrou" . "info@protesilaos.com"))
+      (:commit . "ff40a936a17818152448c0f544164b9e5945c1c3"))])
  (queue .
 	[(0 2)
 	 nil "Queue data structure" tar
