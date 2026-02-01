@@ -1,7 +1,9 @@
 ;;; js-mode
 (use-package js
   :mode (("\\.js\\'" . js-mode)
-         ("\\.jsx\\'" . js-mode))
+         ("\\.jsx\\'" . js-mode)
+         ("\\.cjs\\'" . js-mode)
+         ("\\.mjs\\'" . js-mode))
   :interpreter "node"
   :config
   (setq js-indent-level 2))
