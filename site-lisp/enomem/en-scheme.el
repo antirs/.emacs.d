@@ -35,6 +35,8 @@
 
 ;;; geiser-mode
 (use-package geiser-mode
+  :config
+  (setq geiser-default-implementation 'guile)
   :bind (:map geiser-mode-map
               ("M-i g r" . 'run-geiser)
               ("M-i M-h s" . 'geiser-doc-symbol-at-point)
