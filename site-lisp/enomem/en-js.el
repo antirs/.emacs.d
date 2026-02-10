@@ -53,6 +53,7 @@
               ("M-i M-x e" . 'indium-eval-last-node)
               ("M-i M-x i" . 'indium-inspect-last-node))
   :bind (:map enomem-mode-map
+              ("C-M-i" . indium-eval-last-node)
               ("M-i M-C" . indium-connect)
               ("M-i M-D" . indium-switch-to-debugger)
               ("M-i M-L" . indium-launch)
