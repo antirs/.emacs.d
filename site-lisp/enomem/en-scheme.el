@@ -38,12 +38,18 @@
   :config
   (setq geiser-default-implementation 'guile)
   :bind (:map geiser-mode-map
+              ("M-i M-M" . 'geiser-repl-switch-to-module)
+              ("M-i M-Z" . 'geiser-mode-switch-to-repl)
               ("M-i g r" . 'run-geiser)
               ("M-i M-h s" . 'geiser-doc-symbol-at-point)
               ("M-i e b" . 'geiser-eval-buffer)
               ("M-i e d" . 'geiser-eval-definition)
               ("M-i e r" . 'geiser-eval-region)
               ("M-i e s" . 'geiser-eval-last-sexp)))
+
+(use-package geiser-repl
+  :bind (:map geiser-repl-mode-map
+              ("M-RET" . 'geiser-repl-maybe-send)))
 
 ;;; geiser-chez
 (use-package geiser-chez)
