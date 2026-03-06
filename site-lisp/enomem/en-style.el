@@ -6,6 +6,8 @@
   (scroll-bar-mode -1)
   (tool-bar-mode t)
   (blink-cursor-mode -1)
+  (setq custom-safe-themes
+        '("ee7dc13d93b277d28d58a32d95dcbcbb11271de71ef74cd94d89bda68a140d9a"))
   ;; font
   (add-to-list 'default-frame-alist '(font . "Liberation Mono 12"))
   ;; window-system
@@ -15,7 +17,7 @@
 ;;; arjen-theme
 (use-package arjen-theme
   :config
-  (load-theme 'arjen t nil)
+  (load-theme 'arjen t t)
   :custom-face
   ;; generic
   (cursor
