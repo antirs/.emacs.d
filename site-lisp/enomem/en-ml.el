@@ -46,6 +46,9 @@
   :bind (:map enomem-mode-map
               ("M-i M-o s" . 'opam-switch-set-switch)))
 
+;;; bap-mode
+(use-package bap-mode)
+
 ;;; enomem/en-company
 (use-package enomem/en-company-ml :load-path "site-lisp")
 
