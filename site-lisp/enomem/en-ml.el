@@ -15,7 +15,8 @@
 ;;; tuareg
 (use-package tuareg
   :mode (("\\.ml[ily]?$" . tuareg-mode)
-         ("\\.topml$" . tuareg-mode))
+         ("\\.topml$" . tuareg-mode)
+         ("\\.lem$" . tuareg-mode))
   :bind (:map tuareg-mode-map
               ("M-T . c" . #'tuareg-insert-class-form)
               ("M-T . b" . #'tuareg-insert-begin-form)
