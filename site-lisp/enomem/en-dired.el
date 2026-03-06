@@ -1,7 +1,8 @@
 ;;; dired
 (use-package dired
   :config
-  (setq dired-listing-switches "-vaBDhl --group-directories-first")
+  (setq dired-listing-switches "-vaBDhl --dired --group-directories-first")
+  (setq dired-use-ls-dired t)
   :bind (:map dired-mode-map
               ("M-u M-d o" . dired/dired-open-file))
   :preface
