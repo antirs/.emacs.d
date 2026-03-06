@@ -35,6 +35,9 @@
   (setq merlin-command "ocamlmerlin")
   :hook (tuareg-mode . merlin-mode))
 
+;;; utop
+(use-package utop)
+
 ;;; dune
 (use-package dune)
 
