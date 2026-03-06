@@ -78,7 +78,7 @@
   :hook (prog-mode . enomem/en-fold/prog-mode-setup)
   :preface
   (defun enomem/en-fold/prog-mode-setup ()
-    (if (not (member major-mode '(wdl-mode shaclc-mode shexc-mode)))
+    (if (not (member major-mode '(bap-mode wdl-mode shaclc-mode shexc-mode)))
         (hs-minor-mode))))
 
 ;;; enomem/en-yas
