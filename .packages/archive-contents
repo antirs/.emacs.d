@@ -5963,6 +5963,23 @@
  (ztree . [(20250209 1933) ((cl-lib (0))) "Text mode directory tree" tar ((:url . "https://github.com/fourier/ztree") (:commit . "9905f1be006fe02417fc6598be4990746053bbec") (:revdesc . "9905f1be006f") (:keywords "files" "tools") (:authors ("Alexey Veretennikov" . "alexey.veretennikov@gmail.com")) (:maintainers ("Alexey Veretennikov" . "alexey.veretennikov@gmail.com")) (:maintainer "Alexey Veretennikov" . "alexey.veretennikov@gmail.com"))])
  (zygospore . [(20140703 852) nil "Reversible C-x 1 (delete-other-windows)" tar ((:url . "https://github.com/louiskottmann/zygospore.el") (:commit . "1af5ee663f5a7aa08d96a77cacff834dcdf55ea8") (:revdesc . "1af5ee663f5a") (:authors ("Louis Kottmann" . "louis.kottmann@gmail.com")) (:maintainers ("Louis Kottmann" . "louis.kottmann@gmail.com")) (:maintainer "Louis Kottmann" . "louis.kottmann@gmail.com"))])
  (zzz-to-char . [(20230704 1306) ((emacs (24 4)) (avy (0 3 0))) "Fancy version of `zap-to-char' command" tar ((:url . "https://github.com/mrkkrp/zzz-to-char") (:commit . "5945432d74feb2d1cd3520b185b3ab5dca35e0eb") (:revdesc . "5945432d74fe") (:keywords "convenience") (:authors ("Mark Karpov" . "markkarpov92@gmail.com")) (:maintainers ("Mark Karpov" . "markkarpov92@gmail.com")) (:maintainer "Mark Karpov" . "markkarpov92@gmail.com"))])
+ (ada-mode .
+	   [(8 1 0)
+	    ((uniquify-files
+	      (1 0 4))
+	     (wisi
+	      (4 3 0))
+	     (gnat-compiler
+	      (1 0 3))
+	     (emacs
+	      (25 3)))
+	    "major-mode for editing Ada sources" tar
+	    ((:url . "https://www.nongnu.org/ada-mode/")
+	     (:keywords "languages" "ada")
+	     (:maintainer "Stephen Leake" . "stephen_leake@stephe-leake.org")
+	     (:authors
+	      ("Stephen Leake" . "stephen_leake@stephe-leake.org"))
+	     (:commit . "357ac189bea640023e33214e8efe9288d9d1416c"))])
  (auctex .
 	 [(13 2 2)
 	  ((emacs
@@ -6016,6 +6033,18 @@
       (:url
        . "https://elpa.gnu.org/packages/firefox-javascript-repl.html")
       (:commit . "fee99c20f1f4684ed845eeac9eda46fcde6bf1e9"))])
+ (gnat-compiler .
+		[(1 0 3)
+		 ((emacs
+		   (25 3))
+		  (wisi
+		   (4 3 0)))
+		 "Support for running GNAT tools" tar
+		 ((:maintainer "Stephen Leake" . "stephen_leake@member.fsf.org")
+		  (:authors
+		   ("Stephen Leake" . "stephen_leake@member.fsf.org"))
+		  (:url . "https://elpa.gnu.org/packages/gnat-compiler.html")
+		  (:commit . "9db5c393ee0f9694e83305ef8b0b1e37f0560111"))])
  (mathjax .
 	 [(0 1)
 	  ((emacs
@@ -6136,6 +6165,25 @@
 	   ("Toby Cubitt" . "toby-predictive@dr-qubit.org"))
 	  (:maintainer "Toby Cubitt" . "toby-predictive@dr-qubit.org")
 	  (:url . "http://www.dr-qubit.org/emacs.php"))])
+ (sml-mode .
+	   [(6 12)
+	    ((emacs
+	      (24 3))
+	     (cl-lib
+	      (0 5)))
+	    "Major mode for editing (Standard) ML" tar
+	    ((:keywords "sml")
+	     (:maintainer "Stefan Monnier" . "monnier@iro.umontreal.ca")
+	     (:authors
+	      ("Lars Bo Nielsen")
+	      ("	Olin Shivers")
+	      ("	Fritz Knabe (?)")
+	      ("	Steven Gilmore (?)")
+	      ("	Matthew Morley" . "mjm@scs.leeds.ac.uk")
+	      ("	Matthias Blume" . "blume@cs.princeton.edu")
+	      ("	(Stefan Monnier)" . "monnier@iro.umontreal.ca"))
+	     (:url . "https://elpa.gnu.org/packages/sml-mode.html")
+	     (:commit . "7ebf91114292eead967d1a9bb4f235d66f6dd525"))])
  (spinner .
 	  [(1 7 3)
 	   ((emacs
@@ -6161,4 +6209,28 @@
 	   (:authors
 	    ("Kaushal Modi" . "kaushal.modi@gmail.com"))
 	   (:commit . "670e0a08f625175fd80137cf69e799619bf8a381"))])
+ (uniquify-files .
+		 [(1 0 4)
+		  ((emacs
+		    (25 0)))
+		  "Completion style for files, minimizing directories" tar
+		  ((:keywords "completion" "table" "uniquify")
+		   (:maintainer "Stephen Leake" . "stephen_leake@stephe-leake.org")
+		   (:authors
+		    ("Stephen Leake" . "stephen_leake@stephe-leake.org"))
+		   (:url . "https://elpa.gnu.org/packages/uniquify-files.html")
+		   (:commit . "1d76b4f0e283afaff2be053d85f8726ffc3abd6e"))])
+ (wisi .
+       [(4 3 2)
+	((emacs
+	  (25 3))
+	 (seq
+	  (2 20)))
+	"Utilities for implementing an indentation/navigation engine using a generalized LR parser" tar
+	((:url . "https://stephe-leake.org/ada/wisitoken.html")
+	 (:keywords "parser" "indentation" "navigation")
+	 (:maintainer "Stephen Leake" . "stephen_leake@stephe-leake.org")
+	 (:authors
+	  ("Stephen Leake" . "stephen_leake@stephe-leake.org"))
+	 (:commit . "1c4b099bf1f93cebee523b0ba75ccab6c6c2a2f0"))])
 )
