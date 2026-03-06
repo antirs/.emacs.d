@@ -3,6 +3,15 @@
   :bind (:map enomem-mode-map
               ("M-r M-C" . 'run-caml)))
 
+;;; sml-mode
+(use-package sml-mode)
+
+;;; smlfmt
+(use-package smlfmt)
+
+;;; sml-basis
+(use-package sml-basis)
+
 ;;; tuareg
 (use-package tuareg
   :mode (("\\.ml[ily]?$" . tuareg-mode)
