@@ -1,6 +1,8 @@
 ;;; nasm-mode
 (use-package nasm-mode
   :config
+  (define-derived-mode fasm-mode nasm-mode "fasm mode"
+    "Major mode for distinguishing GNU `fasm` assembly")
   :mode ("\\.nasm\\'" . nasm-mode)
   :hook (nasm-mode . nasm-mode/nasm-mode-setup)
   :preface
@@ -12,7 +14,11 @@
 
 ;;; asm-mode
 (use-package asm-mode
-  :mode ("\\.\\(fasm\\|asm\\|s\\|S\\)\\'" . asm-mode)
+  :config
+  (define-derived-mode gas-mode asm-mode "gas mode"
+    "Major mode for distinguishing GNU `as` assembly"
+    (setq asm-comment-char ?#))
+  :mode ("\\.\\(fasm\\|asm\\|s\\|S\\|inc\\)\\'" . asm-mode)
   :hook (asm-mode . asm-mode/asm-mode-setup)
   :preface
   (defun asm-mode/asm-mode-setup ()
