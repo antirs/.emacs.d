@@ -17,4 +17,8 @@
 (use-package acsl :load-path "site-lisp/system/proof/frama-c" :no-require
   :autoload acsl-mode)
 
+;;; twelf
+(use-package twelf-init :load-path "site-lisp/system/proof/twelf" :no-require
+  :mode ("\\.\\(elf\\|quy\\)$" . twelf-mode))
+
 (provide 'system/proof)
