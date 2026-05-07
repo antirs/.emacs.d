@@ -114,6 +114,7 @@
 (use-package enomem/en-lsp-ruby :load-path "site-lisp")
 (use-package enomem/en-lsp-rust :load-path "site-lisp")
 (use-package enomem/en-lsp-shell :load-path "site-lisp")
+(use-package enomem/en-lsp-tcl :load-path "site-lisp")
 (use-package enomem/en-lsp-vala :load-path "site-lisp")
 (use-package enomem/en-lsp-xml :load-path "site-lisp")
 (use-package enomem/en-lsp-yaml :load-path "site-lisp")
