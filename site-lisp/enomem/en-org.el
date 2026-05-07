@@ -2076,7 +2076,45 @@
   (org-babel-do-load-languages 'org-babel-load-languages org-babel-languages)
   :bind (:map global-map
               ("M-o M-s d" . org-babel-detangle)
-              ("M-o M-s j" . org-babel-tangle-jump-to-org)))
+              ("M-o M-s j" . org-babel-tangle-jump-to-org))
+  :preface
+  (defun org-babel-execute:gas (body params)
+    "Execute a block of FASM code with org-babel."
+    (let ((in-file (or (cdr (assq :file params))
+                       (org-babel-temp-file "n" ".S")))
+          (out-file (concat (cdr (assq :file params)) ".o")))
+      (with-temp-file in-file
+        (insert body))
+      (org-babel-eval
+       (format "as %s -o %s"
+               (org-babel-process-file-name in-file)
+               (org-babel-process-file-name out-file))
+       "")))
+  (defun org-babel-execute:fasm (body params)
+    "Execute a block of FASM code with org-babel."
+    (let ((in-file (or (cdr (assq :file params))
+                       (org-babel-temp-file "n" ".asm"))))
+      (with-temp-file in-file
+        (insert body))
+      (org-babel-eval
+       (format "fasm %s"
+               (org-babel-process-file-name in-file)
+               (org-babel-process-file-name in-file))
+       "")))
+  (defun org-babel-execute:nasm (body params)
+    "Execute a block of FASM code with org-babel."
+    (let ((in-file (or (cdr (assq :file params))
+                       (org-babel-temp-file "n" ".S")))
+          (out-file (concat (cdr (assq :file params)) ".o"))
+          (options (cdr (assq :options params))))
+      (with-temp-file in-file
+        (insert body))
+      (org-babel-eval
+       (format "nasm %s %s -o %s"
+               options
+               (org-babel-process-file-name in-file)
+               (org-babel-process-file-name out-file))
+       ""))))
 
 ;;; ob-async
 (use-package ob-async :disabled
