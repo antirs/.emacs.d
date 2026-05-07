@@ -38,6 +38,7 @@
   :config
   (setq geiser-default-implementation 'guile)
   :bind (:map geiser-mode-map
+              ("M-`" . 'tmm-menubar)
               ("M-i M-M" . 'geiser-repl-switch-to-module)
               ("M-i M-Z" . 'geiser-mode-switch-to-repl)
               ("M-i g r" . 'run-geiser)
