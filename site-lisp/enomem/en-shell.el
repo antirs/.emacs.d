@@ -50,6 +50,7 @@
                 ("o" . 'detached-list-open-session)))
   :hook (detached-shell-mode . compilation-minor-mode)
   :bind (:map enomem-mode-map
+              ("M-i M-d r" . 'detached-rerun-session)
               ("M-i M-d l" . 'detached-list-sessions)
               ("M-i M-d s" . 'detached-shell-command)))
 
