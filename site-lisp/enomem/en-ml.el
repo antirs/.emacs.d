@@ -16,6 +16,7 @@
 (use-package tuareg
   :mode (("\\.ml[ily]?$" . tuareg-mode)
          ("\\.topml$" . tuareg-mode)
+         ("\\.re[i]$" . tuareg-mode)
          ("\\.lem$" . tuareg-mode))
   :bind (:map tuareg-mode-map
               ("M-T . c" . #'tuareg-insert-class-form)
