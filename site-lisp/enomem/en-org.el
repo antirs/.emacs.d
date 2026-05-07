@@ -2041,6 +2041,7 @@
           (lisp . t)
           (makefile . t)
           (maxima . t)
+          (ocaml . t)
           (octave . t)
           (org . t)
           (perl . t)
