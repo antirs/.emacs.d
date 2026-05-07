@@ -35,7 +35,10 @@
 (use-package merlin :disabled
   :config
   (setq merlin-command "ocamlmerlin")
-  :hook (tuareg-mode . merlin-mode))
+  :hook (tuareg-mode . merlin-mode)
+  :bind (:map merlin-mode-map
+              ("M-g M-n" . #'merlin-error-next)
+              ("M-g M-p" . #'merlin-error-prev)))
 
 ;;; utop
 (use-package utop)
