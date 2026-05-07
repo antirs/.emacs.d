@@ -124,6 +124,7 @@
 (use-package enomem/en-mode :load-path "site-lisp")
 (use-package enomem/en-net :load-path "site-lisp")
 (use-package enomem/en-org :load-path "site-lisp")
+(use-package enomem/en-pascal :load-path "site-lisp")
 (use-package enomem/en-perl :load-path "site-lisp")
 (use-package enomem/en-prog :load-path "site-lisp")
 (use-package enomem/en-prolog :load-path "site-lisp")
