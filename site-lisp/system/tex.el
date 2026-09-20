@@ -5,6 +5,10 @@
 ;;; cweb
 (use-package cweb :load-path "site-lisp/system/tex/cweb")
 
+;;; gle-mode
+(use-package gle-mode :load-path "site-lisp/system/tex/gle"
+  :mode ("\\.gle$" . gle-mode))
+
 ;;; latex-cjk-common
 (use-package cjk-enc :load-path "site-lisp/system/tex/latex-cjk-common" :no-require
   :commands cjk-write-file)
