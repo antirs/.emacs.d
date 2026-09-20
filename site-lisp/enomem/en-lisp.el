@@ -12,6 +12,7 @@
   (setq common-lisp-hyperspec-root
         "file:///home/enomem/docs/hyperspec-docs/HyperSpec/")
   :bind (:map lisp-mode-map
+              ("M-s M-h" . hyperspec-lookup)
               ("M-g M-d h" . hyperspec-lookup)))
 
 ;;; slime
