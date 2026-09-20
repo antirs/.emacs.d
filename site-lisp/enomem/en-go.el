@@ -1,6 +1,8 @@
 ;;; go-mode
 (use-package go-mode
-  :mode ("\\.rego\\'" . go-mode))
+  :mode ("\\.rego\\'" . go-mode)
+  :bind (:map go-mode-map
+              ("M-s M-h" . godoc)))
 
 ;;; go-dlv
 (use-package go-dlv :load-path "site-lisp")
