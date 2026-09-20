@@ -1,7 +1,8 @@
 ;;; system/proof
 (use-package system/proof :load-path "site-lisp"
   :config
-  (setq *acl2-sources-dir* "~/code/_source/utexas.edu/cs.utexas.edu/users/moore/acl2/v8-5/distrib/acl2-sources/"))
+  (setq *acl2-sources-dir* "~/code/_source/utexas.edu/cs.utexas.edu/users/moore/acl2/v8-5/distrib/acl2-sources/")
+  (setq twelf-root "~/code/twelf/twelf-1.7.1/"))
 
 ;;; proof-general
 (use-package proof-general/general/proof-site :no-require
