@@ -11,7 +11,7 @@
   :config
   (setq python-shell-interpreter
         (expand-file-name (concat (getenv "VIRTUAL_ENV") "/bin/ipython")))
-  (setq python-shell-interpreter-args "--simple-prompt -i")
+  (setq python-shell-interpreter-args "--simple-prompt -i --colors=nocolor")
   (setq python-indent-offset 4)
   :bind (:map python-mode-map
               ("M-s M-<" . python-indent-shift-left)
