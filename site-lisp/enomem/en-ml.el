@@ -10,7 +10,9 @@
 (use-package smlfmt)
 
 ;;; sml-basis
-(use-package sml-basis)
+(use-package sml-basis
+  :config
+  (setq sml-basis-data-base-url "~/docs/smlfamily.github.io/Basis/"))
 
 ;;; tuareg
 (use-package tuareg
