@@ -17,6 +17,10 @@
 (use-package acsl :load-path "site-lisp/system/proof/frama-c" :no-require
   :autoload acsl-mode)
 
+;;; agda2
+(use-package agda2-mode :load-path "site-lisp/system/proof/agda-mode" :no-require
+  :mode ("\\.\\(agda\\)$" . agda2-mode))
+
 ;;; twelf
 (use-package twelf-init :load-path "site-lisp/system/proof/twelf" :no-require
   :mode ("\\.\\(elf\\|quy\\)$" . twelf-mode))
