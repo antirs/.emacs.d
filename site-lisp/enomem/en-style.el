@@ -19,6 +19,9 @@
   :config
   (load-theme 'arjen t t)
   :custom-face
+  ;; ansi
+  (ansi-color-yellow
+   ((t (:background "gray10"))))
   ;; generic
   (cursor
    ((t (:background "green"))))
@@ -50,6 +53,8 @@
    ((t (:foreground "black" :background "gray80" :underline nil))))
   (highlight
    ((t (:background "#65a7e2" :foreground "black" :))))
+  (xref-match
+   ((t (:foreground "gray80" :background "blue"))))
   (lazy-highlight
    ((t (:background "#E52B50" :foreground "black"))))
   (link
