@@ -2032,6 +2032,7 @@
           (emacs-lisp . t)
           (eshell . t)
           (gnuplot . t)
+          (go . t)
           (haskell . t)
           (java . t)
           (jupyter . t)
@@ -2119,6 +2120,9 @@
 ;;; ob-async
 (use-package ob-async :disabled
   :after ob)
+
+;;; ob-go
+(use-package ob-go)
 
 ;;; ob-jupyter
 (use-package ob-jupyter
