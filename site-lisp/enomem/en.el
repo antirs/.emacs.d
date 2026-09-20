@@ -87,6 +87,7 @@
 (use-package enomem/en-go :load-path "site-lisp")
 (use-package enomem/en-graphics :load-path "site-lisp")
 (use-package enomem/en-haskell :load-path "site-lisp")
+(use-package enomem/en-hw :load-path "site-lisp")
 (use-package enomem/en-java :load-path "site-lisp")
 (use-package enomem/en-js :load-path "site-lisp")
 (use-package enomem/en-jupyter :load-path "site-lisp")
