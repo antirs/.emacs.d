@@ -21,6 +21,15 @@
 (use-package agda2-mode :load-path "site-lisp/system/proof/agda-mode" :no-require
   :mode ("\\.\\(agda\\)$" . agda2-mode))
 
+;;; se-mode
+(use-package se-mode :load-path "site-lisp/system/proof/cedille/se-mode")
+
+;;; cedille
+(use-package cedille-mode :load-path "site-lisp/system/proof/cedille"
+  :mode ("\\.\\(ced\\)$" . cedille-mode)
+  :init
+  (setq cedille-path "~/.emacs.d/site-lisp/system/proof/cedille"))
+
 ;;; twelf
 (use-package twelf-init :load-path "site-lisp/system/proof/twelf" :no-require
   :mode ("\\.\\(elf\\|quy\\)$" . twelf-mode))
